@@ -1,0 +1,228 @@
+{
+  "topics": [
+    { "id": "start", "title": "Start a project" },
+    { "id": "plan", "title": "Plan a project" },
+    { "id": "modes", "title": "Session modes" },
+    { "id": "prs", "title": "Pull requests" },
+    { "id": "automations", "title": "Automations" },
+    { "id": "customize", "title": "Customize" }
+  ],
+  "questions": [
+    {
+      "id": "start-1", "topic": "start",
+      "question": "What do you need before you can sign in and use the GitHub Copilot app?",
+      "options": ["Only a local folder", "A GitHub account and either a Copilot plan or your own model provider", "A Visual Studio license", "A GitHub Enterprise Server instance"],
+      "answerIndex": 1,
+      "explanation": "The quickstart requires a GitHub account, Git installed, and a Copilot plan (or your own model provider credentials). GitHub Enterprise Server is not supported.",
+      "docsTitle": "Getting started with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/get-started/quickstart-copilot-app"
+    },
+    {
+      "id": "start-2", "topic": "start",
+      "question": "Which of these can you connect to the app when you get started?",
+      "options": ["Only repositories on github.com", "Only cloud workspaces", "A repository or a local folder", "Only Azure DevOps projects"],
+      "answerIndex": 2,
+      "explanation": "You can select repositories based on recent GitHub activity, or add a local folder or repository.",
+      "docsTitle": "Getting started with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/get-started/quickstart-copilot-app"
+    },
+    {
+      "id": "start-3", "topic": "start",
+      "question": "Why can you run several agent sessions at once without them colliding?",
+      "options": ["Each session has its own isolated branch", "Sessions take turns automatically", "Only one session can edit files", "Sessions share one branch"],
+      "answerIndex": 0,
+      "explanation": "Sessions run isolated, each with its own branch (for example in separate worktrees), so work proceeds in parallel.",
+      "docsTitle": "Working with agent sessions in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions"
+    },
+    {
+      "id": "start-4", "topic": "start",
+      "question": "What should you use to give Copilot an ongoing goal that spans repositories and recurring tasks?",
+      "options": ["A gist", "A project", "A fork", "A wiki page"],
+      "answerIndex": 1,
+      "explanation": "A project gives Copilot an ongoing goal and lets it coordinate work across repositories, sessions, and recurring tasks.",
+      "docsTitle": "Working with projects in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-projects"
+    },
+    {
+      "id": "plan-1", "topic": "plan",
+      "question": "Which session mode has the agent create a plan that you review and approve before it executes?",
+      "options": ["Autopilot", "Interactive", "Plan", "Review"],
+      "answerIndex": 2,
+      "explanation": "In Plan mode the agent creates a plan first, and you review and approve it before it executes.",
+      "docsTitle": "Working with agent sessions in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions"
+    },
+    {
+      "id": "plan-2", "topic": "plan",
+      "question": "You start a session from an issue and choose Plan mode. What happens first?",
+      "options": ["The agent merges a pull request", "The agent immediately edits files", "The session is archived", "The agent proposes a plan for you to review"],
+      "answerIndex": 3,
+      "explanation": "If you choose Plan mode, the agent proposes a plan for you to review first.",
+      "docsTitle": "Managing issues and pull requests with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+      "id": "plan-3", "topic": "plan",
+      "question": "When you click New session on an issue, what is already loaded?",
+      "options": ["The issue context", "Every other open issue", "Your whole organization's code", "Nothing; you paste it in"],
+      "answerIndex": 0,
+      "explanation": "The app creates a new session with the issue context already loaded.",
+      "docsTitle": "Managing issues and pull requests with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+      "id": "plan-4", "topic": "plan",
+      "question": "Where do you open the issues you want to plan work from?",
+      "options": ["The Customize tab", "The Issues item in the sidebar", "App settings > Sessions", "The Automations pane"],
+      "answerIndex": 1,
+      "explanation": "Click Issues in the sidebar to browse or filter your issues, then open one to view details.",
+      "docsTitle": "Managing issues and pull requests with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+      "id": "modes-1", "topic": "modes",
+      "question": "In which mode does the agent work fully autonomously, writing code and running tests without waiting for input?",
+      "options": ["Autopilot", "Plan", "Interactive", "Read-only"],
+      "answerIndex": 0,
+      "explanation": "Autopilot works fully autonomously, writing code, running tests, and iterating without waiting for input.",
+      "docsTitle": "Working with agent sessions in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions"
+    },
+    {
+      "id": "modes-2", "topic": "modes",
+      "question": "In Interactive mode, how does the agent behave?",
+      "options": ["It never changes files", "It runs without any prompts", "It suggests changes and waits for your input before proceeding", "It only creates plans"],
+      "answerIndex": 2,
+      "explanation": "Interactive means you and the agent work together; the agent suggests changes and waits for your input.",
+      "docsTitle": "Working with agent sessions in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions"
+    },
+    {
+      "id": "modes-3", "topic": "modes",
+      "question": "Where do you change the session mode?",
+      "options": ["Only when creating the repository", "In a repository's Settings tab on GitHub", "In a .github/mode.yml file", "From the dropdown below the prompt field, at any time"],
+      "answerIndex": 3,
+      "explanation": "Set the mode from the dropdown below the prompt field; you can change it at any time.",
+      "docsTitle": "Working with agent sessions in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions"
+    },
+    {
+      "id": "modes-4", "topic": "modes",
+      "question": "How do session modes relate to tool permissions?",
+      "options": ["They are separate: modes control how the agent works, permissions control when it asks before using tools", "They are the same setting", "Permissions only apply in Plan mode", "Autopilot disables permissions permanently"],
+      "answerIndex": 0,
+      "explanation": "The session mode is separate from tool permissions, which control when the agent asks for approval before running a tool.",
+      "docsTitle": "Working with agent sessions in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions"
+    },
+    {
+      "id": "prs-1", "topic": "prs",
+      "question": "How does the agent follow your repository's conventions when you ask it to create a pull request?",
+      "options": ["It ignores templates", "It uses the repository's pull request template", "It asks you to write the title in a form", "It always opens a draft with no description"],
+      "answerIndex": 1,
+      "explanation": "When you ask an agent to create a pull request, it follows the repository's pull request template.",
+      "docsTitle": "Managing issues and pull requests with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+      "id": "prs-2", "topic": "prs",
+      "question": "Where can you browse the pull requests from your repositories?",
+      "options": ["The Pull requests item in the sidebar", "Only github.com", "Only the terminal", "The Skills page"],
+      "answerIndex": 0,
+      "explanation": "Click Pull requests in the sidebar to browse items, then open one to see its summary, CI results, and review activity.",
+      "docsTitle": "Managing issues and pull requests with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+      "id": "prs-3", "topic": "prs",
+      "question": "A reviewer left a comment on your pull request. How can you have an agent resolve it from the app?",
+      "options": ["Delete the comment", "Close the pull request", "Click Fix on the review comment", "Re-run autopilot on a new repository"],
+      "answerIndex": 2,
+      "explanation": "Open the pull request, scroll to the review comments, and click Fix to ask an agent to resolve a comment.",
+      "docsTitle": "Managing issues and pull requests with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+      "id": "prs-4", "topic": "prs",
+      "question": "How do you submit your review after reviewing a pull request in a session?",
+      "options": ["Email the author", "Close the session", "Wait for CI", "Return to the pull request detail view and click Review"],
+      "answerIndex": 3,
+      "explanation": "After reviewing in the session, go back to the pull request detail view and click Review at the top to submit.",
+      "docsTitle": "Managing issues and pull requests with the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+    },
+    {
+      "id": "auto-1", "topic": "automations",
+      "question": "What are automations for?",
+      "options": ["Saving recurring agent tasks to run on a schedule, on repository events, or on demand", "Installing the app", "Choosing a color theme", "Deleting branches"],
+      "answerIndex": 0,
+      "explanation": "Automations let you save recurring agent tasks and run them on a schedule, on events, or on demand.",
+      "docsTitle": "Using automations in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations"
+    },
+    {
+      "id": "auto-2", "topic": "automations",
+      "question": "What is the difference between local and cloud automations?",
+      "options": ["Cloud ones only run once", "Local run from your environment; cloud run in a cloud environment, even when your computer is off", "Local ones need Copilot Enterprise", "There is no difference"],
+      "answerIndex": 1,
+      "explanation": "Local automations run from your local environment; cloud automations run in the cloud, so they run even when your computer is off.",
+      "docsTitle": "Using automations in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations"
+    },
+    {
+      "id": "auto-3", "topic": "automations",
+      "question": "Who can see a Shared cloud automation?",
+      "options": ["Only you", "Only organization owners", "Everyone with access to the repository", "Nobody"],
+      "answerIndex": 2,
+      "explanation": "Shared automations are visible to everyone with repository access and act with Copilot's identity. Personal ones are visible only to you.",
+      "docsTitle": "Using automations in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations"
+    },
+    {
+      "id": "auto-4", "topic": "automations",
+      "question": "Where do you start creating an automation in the app?",
+      "options": ["Settings > Sessions", "The Models page", "The Skills folder", "Automations in the sidebar, then Create automation"],
+      "answerIndex": 3,
+      "explanation": "Click Automations in the sidebar, then Create automation in the top-right corner.",
+      "docsTitle": "Using automations in the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations"
+    },
+    {
+      "id": "cust-1", "topic": "customize",
+      "question": "Where do you discover and install MCP servers?",
+      "options": ["Customize in the sidebar, then MCP", "The Pull requests page", "The terminal only", "Automations"],
+      "answerIndex": 0,
+      "explanation": "Click Customize, then MCP, to explore featured or trending servers, browse categories, or add a custom server.",
+      "docsTitle": "Customizing the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app"
+    },
+    {
+      "id": "cust-2", "topic": "customize",
+      "question": "What do MCP servers do for the agent?",
+      "options": ["Host your website", "Connect it to external tools and data sources", "Replace Git", "Manage billing"],
+      "answerIndex": 1,
+      "explanation": "MCP servers connect the agent to external tools and data sources.",
+      "docsTitle": "Customizing the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app"
+    },
+    {
+      "id": "cust-3", "topic": "customize",
+      "question": "How can you use a model from an external provider in the app?",
+      "options": ["It is not possible", "Fork the app", "Connect a model from a provider of your choice, hosted locally or in the cloud", "Email GitHub support"],
+      "answerIndex": 2,
+      "explanation": "You can add models from an external provider of your choice, hosted locally or in the cloud.",
+      "docsTitle": "Adding LLM models to the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/add-llm-models"
+    },
+    {
+      "id": "cust-4", "topic": "customize",
+      "question": "Where do you set instructions that apply to every session across all repositories?",
+      "options": ["A pull request description", "An issue comment", "A repository wiki", "App settings > Sessions > App instructions"],
+      "answerIndex": 3,
+      "explanation": "Global instructions are set in the app settings under Sessions, in \"App instructions\". Repository instructions are set under the repository in settings.",
+      "docsTitle": "Customizing the GitHub Copilot app",
+      "docsUrl": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app"
+    }
+  ]
+}

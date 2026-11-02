@@ -1,0 +1,179 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#f6f8fa, #0d1117);
+  --surface: light-dark(#fff, #161b22);
+  --border: light-dark(#d0d7de, #30363d);
+  --text: light-dark(#1f2328, #e6edf3);
+  --muted: light-dark(#59636e, #9198a1);
+  --accent: light-dark(#0969da, #4493f8);
+  --good: light-dark(#1a7f37, #3fb950);
+  --bad: light-dark(#cf222e, #f85149);
+  --radius: 0.75rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.site-header, main {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 1.5rem 1rem;
+}
+
+.site-header {
+  h1 { margin: 0 0 0.25rem; }
+  p { margin: 0; color: var(--muted); }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+
+  &.secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  &:disabled { opacity: 0.5; cursor: not-allowed; }
+  &:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+}
+
+[role="tablist"] {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border);
+
+  [role="tab"] {
+    background: transparent;
+    color: var(--muted);
+    border-radius: 0.5rem 0.5rem 0 0;
+    white-space: nowrap;
+
+    &[aria-selected="true"] {
+      color: var(--text);
+      border-color: var(--border);
+      border-bottom-color: var(--bg);
+      background: var(--surface);
+      font-weight: 600;
+    }
+  }
+}
+
+#panel {
+  padding-block: 1.25rem;
+  &:focus-visible { outline: 2px solid var(--accent); }
+}
+
+.progress { color: var(--muted); margin: 0 0 1rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  text-align: start;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  &:hover { border-color: var(--accent); }
+  &[data-status="correct"] { border-inline-start: 6px solid var(--good); }
+  &[data-status="incorrect"] { border-inline-start: 6px solid var(--bad); }
+
+  .num { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .badge { margin-top: auto; font-size: 0.85rem; color: var(--muted); }
+  &[data-status="correct"] .badge { color: var(--good); }
+  &[data-status="incorrect"] .badge { color: var(--bad); }
+}
+
+dialog {
+  width: min(36rem, calc(100% - 2rem));
+  padding: 1.5rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  &::backdrop { background: rgb(0 0 0 / 0.5); }
+  h2 { margin-top: 0; font-size: 1.25rem; }
+}
+
+.eyebrow { margin: 0 0 0.25rem; color: var(--muted); font-size: 0.85rem; }
+
+fieldset {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.option {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  &:has(input:checked) { border-color: var(--accent); }
+  &:has(input:focus-visible) { outline: 3px solid var(--accent); }
+  &.correct { border-color: var(--good); background: color-mix(in srgb, var(--good) 15%, transparent); }
+  &.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 15%, transparent); }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.good { color: var(--good); }
+.bad { color: var(--bad); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog[open] { animation: pop 150ms ease-out; }
+  @keyframes pop { from { opacity: 0; transform: scale(0.97); } }
+}
