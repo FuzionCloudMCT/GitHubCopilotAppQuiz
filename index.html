@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Copilot app quiz</title>
+  <meta name="description" content="Practice quiz for people new to the GitHub Copilot app.">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>GitHub Copilot app quiz</h1>
+    <p>Pick a topic, choose a question, and test what you know.</p>
+    <div class="header-actions">
+      <p id="overall" aria-live="polite"></p>
+      <button type="button" id="reset" class="secondary">Reset session</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="tabs" role="tablist" aria-label="Quiz topics"></div>
+    <section id="panel" role="tabpanel" tabindex="0"></section>
+  </main>
+
+  <dialog id="question-dialog" aria-labelledby="q-title">
+    <form method="dialog" id="q-form">
+      <p class="eyebrow" id="q-meta"></p>
+      <h2 id="q-title"></h2>
+      <fieldset id="q-options">
+        <legend class="visually-hidden">Answer options</legend>
+      </fieldset>
+      <div class="actions">
+        <button type="button" id="q-cancel" class="secondary">Cancel</button>
+        <button type="submit" id="q-submit">Submit answer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="result-dialog" aria-labelledby="r-title">
+    <h2 id="r-title"></h2>
+    <p id="r-body"></p>
+    <p id="r-docs"></p>
+    <div class="actions">
+      <button type="button" id="r-retry" class="secondary" hidden>Try again</button>
+      <button type="button" id="r-close">Back to questions</button>
+    </div>
+  </dialog>
+</body>
+</html>
